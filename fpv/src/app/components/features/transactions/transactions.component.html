@@ -1,0 +1,71 @@
+<div class="carousel-container">
+  <h2 class="funds-title">Transacciones Activas</h2>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+        <!-- Position Column -->
+        <ng-container matColumnDef="demo-position">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="demo-name">
+          <th mat-header-cell *matHeaderCellDef> ID Fondo </th>
+          <td mat-cell *matCellDef="let element"> {{element.fundId}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="demo-amount">
+          <th mat-header-cell *matHeaderCellDef> monto </th>
+          <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="demo-action">
+            <th mat-header-cell *matHeaderCellDef> Acción </th>
+            <td mat-cell *matCellDef="let element" (click)="cancelSubscription(element.id)">
+                <button mat-icon-button aria-label="Botón para eliminar">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+            </td>
+          </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+
+<div class="transaction-form-container">
+  <mat-card class="transaction-card">
+    <mat-card-header>
+      <mat-card-title>Ingresar ID de Transacción</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="transactionForm" (ngSubmit)="searchTransation()">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>ID de Transacción</mat-label>
+          <input matInput formControlName="transactionId" placeholder="Ingresa el ID" />
+          <mat-error *ngIf="transactionForm.get('transactionId')?.invalid">
+            El ID de transacción es requerido
+          </mat-error>
+        </mat-form-field>
+        <div class="button">
+          <button mat-raised-button color="primary" type="submit" class="submit-button">
+            Enviar
+          </button>
+        </div>
+        <div class="result-card" *ngIf="fund">
+          <mat-card class="mat-card-content-display">
+            <mat-card-title>{{ fund.name }}</mat-card-title>
+            <mat-card-content class="mat-card-content-display">
+              <p>Categoría: {{ fund.category }}</p>
+              <p>Inversión mínima: {{ fund.minimumInvestment | currency }}</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+  
