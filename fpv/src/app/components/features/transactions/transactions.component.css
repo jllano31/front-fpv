@@ -1,0 +1,103 @@
+.demo-table {
+    width: 100%;
+  }
+  
+  .mat-column-demo-position {
+    width: 5px;
+    border-right: 1px solid currentColor;
+    padding-right: 1px;
+    text-align: center;
+  }
+  
+  .mat-column-demo-name {
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .mat-column-demo-amount {
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .mat-column-demo-action {
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .transaction-form-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .transaction-card {
+    width: 700px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .submit-button {
+    margin-top: 10px;
+    width: 30%;
+    justify-content: center !important;
+  }
+  .button {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .carousel-card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mat-card-content-display{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .result-card{
+    margin-top: 5px;
+  }
+
+  .mat-mdc-card-header {
+    display: flex;
+    padding: 16px 16px 0;
+    justify-content: center;
+}
+
+.funds-title {
+  font-size: 1.8em;
+  color: #1a237e;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
