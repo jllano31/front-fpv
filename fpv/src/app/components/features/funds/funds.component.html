@@ -2,7 +2,10 @@
   <h2 class="funds-title">Fondos Disponibles para Inversión</h2>
   <div class="carousel-container">
     <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
-      <mat-tab *ngFor="let fund of funds; let i = index" [label]="'Fondo ' + (i + 1)">
+      <mat-tab
+        *ngFor="let fund of funds; let i = index"
+        [label]="'Fondo ' + (i + 1)"
+      >
         <mat-card class="carousel-card">
           <mat-card-title>{{ fund.name }}</mat-card-title>
           <mat-card-subtitle>{{ fund.category }}</mat-card-subtitle>
@@ -10,7 +13,9 @@
             <p>Inversión mínima: {{ fund.minimumInvestment | currency }}</p>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-button color="primary" (click)="invest(fund)">Invertir</button>
+            <button mat-button color="primary" (click)="invest(fund)">
+              Invertir
+            </button>
             <button mat-button color="accent">Detalles</button>
           </mat-card-actions>
         </mat-card>

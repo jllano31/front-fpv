@@ -1,10 +1,7 @@
-
-
-@if (isLoginPage) {
-  <app-login></app-login>
-}
-@else {
-  <ng-container>
-    <app-sidenav></app-sidenav>
+@if (balanceService.client() === null) {
+<app-login></app-login>
+} @else {
+<ng-container>
+  <app-sidenav></app-sidenav>
 </ng-container>
 }

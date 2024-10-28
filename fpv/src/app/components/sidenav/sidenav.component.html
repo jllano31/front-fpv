@@ -2,7 +2,9 @@
   <mat-sidenav #sidenav mode="side" closed color="primary">
     <mat-nav-list>
       <a mat-list-item routerLink="/funds" class="text-white">Fondos</a>
-      <a mat-list-item routerLink="/transactions" class="text-white">Transacciones</a>
+      <a mat-list-item routerLink="/transactions" class="text-white"
+        >Transacciones</a
+      >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -12,7 +14,9 @@
       </button>
       <span class="toolbar-title">Fondo Voluntario de Pensión</span>
       <span class="spacer"></span>
-      <span>Dinero actual: {{ availableBalance | currency }}</span>
+      <span
+        >Dinero actual: {{ balanceService.client()?.availableBalance }}</span
+      >
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

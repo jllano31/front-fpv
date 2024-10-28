@@ -1,6 +1,6 @@
 export interface Fund {
-    id: string;
-    name: string;
-    minimumInvestment: number;
-    category: string;
+  id: string;
+  name: string;
+  minimumInvestment: number;
+  category: string;
 }

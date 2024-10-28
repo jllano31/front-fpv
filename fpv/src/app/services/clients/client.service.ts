@@ -7,7 +7,8 @@ import { Client } from '../../models/clients/Client';
   providedIn: 'root',
 })
 export class ClientService {
-  private apiUrl = 'http://localhost:8080/api/clients';
+  private apiUrl =
+    'http://ec2-54-226-140-102.compute-1.amazonaws.com:8080/api/clients';
 
   constructor(private http: HttpClient) {}
 

@@ -1,37 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
-import { RouterModule, RouterOutlet} from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { BalanceService } from '../../services/balance/balance.service';
 
 @Component({
   selector: 'app-sidenav',
   standalone: true,
-  imports: [CommonModule,
+  imports: [
+    CommonModule,
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
     MatListModule,
     RouterOutlet,
-    RouterModule
+    RouterModule,
   ],
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css']
+  styleUrls: ['./sidenav.component.css'],
 })
-export class SidenavComponent implements OnInit{
+export class SidenavComponent {
   availableBalance: number | null = null;
-constructor(
-  private localStorageService: BalanceService
-){}
 
-ngOnInit(): void {
-  this.localStorageService.client$.subscribe((client) => {
-    this.availableBalance = client?.availableBalance ?? null;
-  });
-}
+  constructor(protected balanceService: BalanceService) {}
 }
